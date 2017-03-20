@@ -1,0 +1,43 @@
+@model IEnumerable<_383_Phase1_InventoryTracker.Entities.InventoryItem>
+
+@{
+    ViewData["Title"] = "Purchase";
+}
+<body style="background-color: powderblue;">
+    <h2>Inventory Items</h2>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        <a asp-action="Purchase" asp-route-id="@item.Id">Purchase</a> |
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

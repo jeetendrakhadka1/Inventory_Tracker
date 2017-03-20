@@ -1,0 +1,48 @@
+@model _383_Phase1_InventoryTracker.Entities.InventoryItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body style="background-color: powderblue;">
+    <h2>Create</h2>
+
+    <form asp-action="Create">
+        <div class="form-horizontal">
+            <h4>Inventory Item</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CreatedByUserId" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="CreatedByUserId" class="form-control" />
+                    <span asp-validation-for="CreatedByUserId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <a asp-action="AdminIndex">Back to List</a>
+    </div>
+
+
+    </body>
